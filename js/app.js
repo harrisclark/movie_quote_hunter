@@ -17,3 +17,25 @@
 
 // const game = new Game();
 // game.getRandomPhrase().addPhraseToDisplay();
+
+// const game = new Game();
+// game.startGame();
+// console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
+
+let game;
+const resetBtn = document.getElementById('btn__reset');
+
+resetBtn.addEventListener('click', () => {
+    game = new Game();
+    game.startGame();
+});
+
+
+const qwerty = document.getElementById('qwerty');
+qwerty.addEventListener('click', (e) => {
+    if (e.target.tagName === 'BUTTON') {
+        //console.log(e.target.textContent)
+        game.handleInteraction(e.target.textContent)
+    }
+});
+
